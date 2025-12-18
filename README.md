@@ -46,6 +46,24 @@ Tic-Tac-Toe serves as a baseline environment, while Connect Four introduces deep
 * Invalid actions penalized
 **Training Framework**: PyTorch
 
+## Reproducibility and Model Checkpoints
+
+To ensure reproducible results, model states are saved at regular training checkpoints for both games. These checkpoints allow training to be resumed, evaluated at different stages, and independently verified.
+
+At each checkpoint, the neural network weights and optimizer state are saved to disk.
+
+**Tic-Tac-Toe Checkpoints**
+Saved after predefined numbers of training episodes:
+* `tictactoe_selfplay_v1.pth`
+* `tictactoe_selfplay_v2.pth`
+* `tictactoe_selfplay_perfect.pth`
+  
+**Connect Four Checkpoints**
+Due to increased complexity, Connect Four checkpoints are saved at later stages:
+* `connect4_checkpoint_v1.pth`
+
+Each filename reflects the checkpoint completed at the time of saving, making it easy to track learning progress and reproduce specific results reported in the notebook.
+
 ## Technologies Used
 * Python
 * PyTorch
